@@ -1,59 +1,99 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <!-- Required meta tags -->
+    <!-- Required meta tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="css/bootstrap.min.css" >
-        <link rel="stylesheet" href="css/estile.css">
-    <title>Deportes</title>
-    
-</head>
-<body>
-        <!-- Barra de navegación -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="index.html">
-              <img src="img/LOGO2.png" width="100" height="100" class="d-inline-block align-top" alt=""></a>
-              <b>DEPORTES</b> 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" 
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
-                    aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <!--Inicio del Menu-->
-            <!--el ID debe ser el mismo que se le puso al data-target-->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Categorías
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="vegetariana.html">Deportes</a>
-                    <a class="dropdown-item" href="sabores.html">Ligas de España</a>
-                  </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contacto</a>
-                </li>
-              </ul>
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Ingresa el texto" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-              </form>
-            </div>
-                        
-        </nav>
 
-        <!--SIN ESTO NO MUESTRA LAS CATEGORIAS O CARRUSELL-->
-        <script src="js/jquery-3.6.0.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        
-   
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estile.css">
+    <title>Deportes</title>
+
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">
+            <img src="img/LOGO2.png" width="100" height="100" class="d-inline-block align-top" alt=""></a>
+        <b>DEPORTES</b>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!--Inicio del Menu-->
+        <!--el ID debe ser el mismo que se le puso al data-target-->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Categorías
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="deportes.html">Deportes</a>
+                        <a class="dropdown-item" href="ligasespaña.html">Ligas de España</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Carrusel agregar carrusel-->
+    <div class="container">
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/premium1.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Prizas Premium</h5>
+                        <p>Pizzas premium son aquellas que el cliente solicita, con ingredientes premium</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/vegetariana1.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Pizzas Vegetariana</h5>
+                        <p>Pizzas vegeriana son aquellas con verduras, con ingredientes que cliente solicita o que ya se
+                            encuentran dentro del menú</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/sabores1.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>sabores del mundo</h5>
+                        <p>Pizzas sabores del mundo son aquellas que tienen ingredientez exoticos, como piña, papaya,
+                            etc.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- estos son los botones de siguiente y previus-->
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <!--SIN ESTO NO MUESTRA LAS CATEGORIAS O CARRUSELL-->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+
 </body>
+
 </html>
