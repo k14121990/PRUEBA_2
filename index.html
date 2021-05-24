@@ -11,21 +11,6 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Deportes</title>
-
-    <!--LLAMAR FUNCION Y DECLARAR VARIABLES-->
-    <script>
-        function contacto{
-            //Definimos las variables y obtenemos los datos desde el formulario
-            var nombre = document.getElementById("nombre").value;
-            var email = document.getElementById("email").value;
-            var rut = document.getElementById("rut").value;
-            var contraseña = document.getElementById("contraseña").value;
-            var comentario = document.getElementById("comentario").value;
-            
-            //alert("El resultado de la suma es "+ sum);
-        }
-    </script>
-
 </head>
 
 <body>
@@ -120,10 +105,10 @@
 
     <!-- FORMULARIO-->
 
-    <h1 class="text-center text-uppercase">Contacto</h1>
+    <h1 class="text-center">Contacto</h1>
     <div class="container">
         <div class="row">
-            <form action="validacion.html" method="get">
+            <form action="" id="formulario">
 
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
@@ -145,19 +130,46 @@
                     <label for="comentario">Comentario</label>
                     <textarea name="comentario" id="comentario" cols="30" class="form-control"></textarea>
                 </div>
-
-
-                <button type="button" class="btn btn-primary" onclick="enviar()">Enviar</button>
+                <input type="submit" value="Enviar" class="btn btn-primary" id="enviar">
+                <div class="alert alert-danger" id="error"></div>
             </form>
         </div>
     </div>
-
-
 
     <!--SIN ESTO NO MUESTRA LAS CATEGORIAS O CARRUSELL-->
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+
+    <!--funcion vaidacion-->
+    <script>
+        $(document).ready(function(){
+            $("#error").hide();
+            $("#formulario").submit(function(){
+                var mensaje = "";
+                if($("#nombre").val().trim().length == 0){
+                    mensaje = "El nombre esta en blanco"
+                }
+                if($("#email").val().trim().length == 0){
+                    mensaje = "El email está en blanco"
+                }
+                if($("#rut").val().trim().length == 0){
+                    mensaje = "El rut esta en blanco"
+                }
+                if($("#Contraseña").val().trim().length == 0){
+                    mensaje = "La contraseña está en blanco"
+                }
+                if($("#comentario").val().trim().length == 0){
+                    mensaje = "El campo de comentario esta en blanco"
+                }
+                if(mensaje != ""){
+                    $("#error").html(mensaje);
+                    $("#error").show();
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
