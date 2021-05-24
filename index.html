@@ -16,13 +16,13 @@
 <body>
     <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html" >
+        <a class="navbar-brand" href="index.html">
             <img src="img/LOGO2.png" width="100" height="100" class="d-inline-block align-top" alt=""></a>
         <b> DEPORTES </b>
 
         <!--Inicio del Menu-->
         <!--el ID debe ser el mismo que se le puso al data-target-->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -53,35 +53,46 @@
                     <img src="img/sport-moments-banner.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h5 style="color: black;"><b>Todos los deportes</b></h5>
-                        <p style="color: black;">El deporte es una actividad, normalmente de carácter competitivo y que puede mejorar la condición física,​ de quien lo practica, y además tiene propiedades que lo diferencian del juego.</p>
+                        <p style="color: black;">El deporte es una actividad, normalmente de carácter competitivo y que
+                            puede mejorar la condición física,​ de quien lo practica, y además tiene propiedades que lo
+                            diferencian del juego.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="img/futbol.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>fútbol</h5>
-                        <p>El fútbol o futbol​ (del inglés británico football, traducido como balompié)​ es un deporte de equipo jugado entre dos conjuntos de once jugadores cada uno y algunos árbitros que se ocupan de que las normas se cumplan correctamente.</p>
+                        <p>El fútbol o futbol​ (del inglés británico football, traducido como balompié)​ es un deporte
+                            de equipo jugado entre dos conjuntos de once jugadores cada uno y algunos árbitros que se
+                            ocupan de que las normas se cumplan correctamente.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="img/futbol_americano.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Fútbol americano</h5>
-                        <p>El fútbol americano es un deporte de contacto en el que dos equipos de jugadores intentan llevar la pelota a la zona de anotación o patearla entre los postes.</p>
+                        <p>El fútbol americano es un deporte de contacto en el que dos equipos de jugadores intentan
+                            llevar la pelota a la zona de anotación o patearla entre los postes.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="img/basquet.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h5 style="color: rgb(0, 0, 0); "><b>Basquetbol</h5>
-                        <p style="color: black;">Se conoce como basquetbol, básquetbol, baloncesto o básquet a un deporte de competición por equipos, cuyo objetivo es insertar el balón con las manos en un cesto elevado. Gana quien haga más anotaciones o "canastas" en el aro del equipo contrario.</p>
+                        <p style="color: black;">Se conoce como basquetbol, básquetbol, baloncesto o básquet a un
+                            deporte de competición por equipos, cuyo objetivo es insertar el balón con las manos en un
+                            cesto elevado. Gana quien haga más anotaciones o "canastas" en el aro del equipo contrario.
+                        </p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="img/voleibol.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h5 style="color: black;"><b>Vóleibol</b></h5>
-                        <p style="color: black;">El voleibol, vóleibol, volibol, vólibol, balonvolea o simplemente vóley (del inglés volleyball),​ es un deporte que se juega con una pelota y en el que dos equipos, integrados por seis jugadores cada uno, se enfrentan sobre un área de juego separada por una red central.</b></p>
+                        <p style="color: black;">El voleibol, vóleibol, volibol, vólibol, balonvolea o simplemente vóley
+                            (del inglés volleyball),​ es un deporte que se juega con una pelota y en el que dos equipos,
+                            integrados por seis jugadores cada uno, se enfrentan sobre un área de juego separada por una
+                            red central.</b></p>
                     </div>
                 </div>
             </div>
@@ -116,7 +127,7 @@
                 </div>
                 <div class="form-group">
                     <label for="rut">Rut</label>
-                    <input type="number" name="rut" id="rut" class="form-control">
+                    <input type="text" name="rut" id="rut" oninput="checkRut(this)" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="contraseña">Contraseña</label>
@@ -138,27 +149,28 @@
     <script src="js/bootstrap.min.js"></script>
 
     <!--funcion vaidacion-->
+
     <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
             $("#error").hide();
-            $("#formulario").submit(function(){
+            $("#formulario").submit(function () {
                 var mensaje = "";
-                if($("#nombre").val().trim().length == 0){
+                if ($("#nombre").val().trim().length == 0) {
                     mensaje = "El nombre esta en blanco"
                 }
-                if($("#email").val().trim().length == 0){
+                if ($("#email").val().trim().length == 0) {
                     mensaje = "El email está en blanco"
                 }
-                if($("#rut").val().trim().length == 0){
+                if ($("#rut").val().trim().length == 0) {
                     mensaje = "El rut esta en blanco"
                 }
-                if($("#Contraseña").val().trim().length == 0){
+                if ($("#Contraseña").val().trim().length == 0) {
                     mensaje = "La contraseña está en blanco"
                 }
-                if($("#comentario").val().trim().length == 0){
+                if ($("#comentario").val().trim().length == 0) {
                     mensaje = "El campo de comentario esta en blanco"
                 }
-                if(mensaje != ""){
+                if (mensaje != "") {
                     $("#error").html(mensaje);
                     $("#error").show();
                     event.preventDefault();
@@ -166,6 +178,7 @@
             });
         });
     </script>
+
 </body>
 
 </html>
