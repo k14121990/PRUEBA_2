@@ -18,11 +18,8 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.html" >
             <img src="img/LOGO2.png" width="100" height="100" class="d-inline-block align-top" alt=""></a>
-        <b>DEPORTES</b>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <b> DEPORTES </b>
+
 
         <!--Inicio del Menu-->
         <!--el ID debe ser el mismo que se le puso al data-target-->
@@ -42,10 +39,73 @@
         </div>
     </nav>
 
-        <!--SIN ESTO NO MUESTRA LAS CATEGORIAS O CARRUSELL-->
-        <script src="js/jquery-3.6.0.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <!-- FORMULARIO DONDE SE LLAMA LA API LA API-->
+        <h1 class="text-center text-uppercase">Ligas</h1>
+        <div class="container">
+            <div class="row">
+                <h3>Ligas de España</h3>
+            </div>
+            <div class="row">
+                <button type="button" class="btn btn-primary" id="enviar">Deportes</button>
+            </div>
+            <div class="row">
+                <table class="table" id="liga">
+                    <thead>
+                        <tr>
+                            <th scope="col">Liga</th>
+                            <th scope="col">Deporte</th>
+                            <th scope="col">Id deporte</th>
+                            <th scope="col">Lenguaje</th>
+                            <th scope="col">Lenguaje alternativo</th>
+                            <th scope="col">División</th>
+                            <th scope="col">Temporada actual</th>
+                            <th scope="col">Año de creación</th>
+                            <th scope="col">Fecha Primer evento</th>
+                            <th scope="col">Género</th>
+                            <th scope="col">País</th>
+                            <th scope="col">Página web</th>
+                            <th scope="col">Facebook</th>
+                            <th scope="col">Twitter</th>
+                            <th scope="col">Youtube</th>
+                            <th scope="col">RSS</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Insignia</th>
+    
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    
+            <!--SIN ESTO NO MUESTRA LAS CATEGORIAS O CARRUSELL-->
+            <script src="js/jquery-3.6.0.min.js"></script>
+            <script src="js/popper.min.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+    
+            <!--FUNCION PARA LLAMAR LA API-->
+            <script>
+                $("#enviar").click(function(){
+                    $.get("https://www.thesportsdb.com/api/v1/json/1/search_all_leagues.php?c=spain", 
+                        function(data){
+                            $.each(data.countrys, function(i, item){// data.countrys es donde aparece lo primero de la api
+                                $("#liga").append("<tr><td>" + item.idLeague + "</td><td>" + item.idSoccerXML +
+                                     "</td><td>" + item.strSport + 
+                                        "</td><td>" + item.strLeague + "</td><td>" + item.strLeagueAlternate + 
+                                            "</td><td>" + item.strDivision + "</td><td>" + item.strCurrentSeason + "</td><td>" + item.intFormedYear + 
+                                                    "</td><td>" + item.dateFirstEvent + "</td><td>" + item.strGender + 
+                                                        "</td><td>" + item.strCountry + "</td><td>" + item.strWebsite + 
+                                                            "</td><td>" + item.strFacebook + "</td><td>" + item.strTwitter + 
+                                                                "</td><td>" + item.strYoutube + "</td><td>" + item.strRSS + 
+                                                                    "</td><td>" + item.strDescriptionEN + 
+                                                                        "</td><td> <img src='" + item.strFanart1 + "'>" + 
+                                                                            "</td><td> <img src='" + item.strBadge + "'>" + "</td></tr>")
+                            });
+        
+                        });
+        
+                });
+            </script>
 </body>
 
 </html>
