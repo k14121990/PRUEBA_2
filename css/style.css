@@ -10,3 +10,11 @@ Obliga a que la imagen tenga una anchura del 100% y no una anchura máxima del 1
   .carousel-item .img-fluid {
     width:100%;
   }
+/*
+los anclajes están en línea, por lo que hay que bloquearlos para que vayan a todo lo ancho
+*/
+
+  .carousel-item a {
+    display: block;
+    width:100%;
+  }
